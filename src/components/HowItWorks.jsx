@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { chipImg, frameImg, frameVideo } from "../utils";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { animateWithGsap } from "../utils/animations";
+import { animateWithGSAP } from "../utils/animation";
 
 const HowItWorks = () => {
   const videoRef = useRef();
@@ -19,7 +19,7 @@ const HowItWorks = () => {
       ease: "power2.inOut",
     });
 
-    animateWithGsap(".g_fadeIn", {
+    animateWithGSAP(".g_fadeIn", {
       opacity: 1,
       y: 0,
       duration: 1,
