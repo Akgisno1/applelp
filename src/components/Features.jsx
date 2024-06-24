@@ -1,6 +1,6 @@
 import { useGSAP } from "@gsap/react";
 import React, { useRef } from "react";
-import { animateWithGSAP } from "../utils/animation";
+import { animateWithGsap } from "../utils/animations";
 import { explore1Img, explore2Img, exploreVideo } from "../utils";
 import gsap from "gsap";
 
@@ -19,13 +19,13 @@ const Features = () => {
       },
     });
 
-    animateWithGSAP("#features_title", { y: 0, opacity: 1 });
-    animateWithGSAP(
+    animateWithGsap("#features_title", { y: 0, opacity: 1 });
+    animateWithGsap(
       ".g_grow",
       { scale: 1, opacity: 1, ease: "power1" },
       { scrub: 5.5 }
     );
-    animateWithGSAP(".g_text", {
+    animateWithGsap(".g_text", {
       y: 0,
       opacity: 1,
       ease: "power2.inOut",

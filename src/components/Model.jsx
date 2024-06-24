@@ -8,9 +8,7 @@ import * as THREE from "three";
 import { Canvas } from "@react-three/fiber";
 import { View } from "@react-three/drei";
 import { models, sizes } from "../constants";
-
-import React from "react";
-import { animateWithGSAPTimeline } from "../utils/animation";
+import { animateWithGsapTimeline } from "../utils/animations";
 
 const Model = () => {
   const [size, setSize] = useState("small");
@@ -20,25 +18,30 @@ const Model = () => {
     img: yellowImg,
   });
 
+  // camera control for the model view
   const cameraControlSmall = useRef();
   const cameraControlLarge = useRef();
 
+  // model
   const small = useRef(new THREE.Group());
   const large = useRef(new THREE.Group());
 
+  // rotation
   const [smallRotation, setSmallRotation] = useState(0);
   const [largeRotation, setLargeRotation] = useState(0);
 
   const tl = gsap.timeline();
+
   useEffect(() => {
     if (size === "large") {
-      animateWithGSAPTimeline(tl, small, smallRotation, "#view1", "#view2", {
+      animateWithGsapTimeline(tl, small, smallRotation, "#view1", "#view2", {
         transform: "translateX(-100%)",
         duration: 2,
       });
     }
+
     if (size === "small") {
-      animateWithGSAPTimeline(tl, large, largeRotation, "#view2", "#view1", {
+      animateWithGsapTimeline(tl, large, largeRotation, "#view2", "#view1", {
         transform: "translateX(0)",
         duration: 2,
       });

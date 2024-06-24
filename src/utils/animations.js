@@ -1,7 +1,9 @@
 import gsap from "gsap";
+
 import { ScrollTrigger } from "gsap/all";
 gsap.registerPlugin(ScrollTrigger);
-export const animateWithGSAP = (target, animationProps, scrollProps) => {
+
+export const animateWithGsap = (target, animationProps, scrollProps) => {
   gsap.to(target, {
     ...animationProps,
     scrollTrigger: {
@@ -13,7 +15,7 @@ export const animateWithGSAP = (target, animationProps, scrollProps) => {
   });
 };
 
-export const animateWithGSAPTimeline = (
+export const animateWithGsapTimeline = (
   timeline,
   rotationRef,
   rotationState,
@@ -26,6 +28,22 @@ export const animateWithGSAPTimeline = (
     duration: 1,
     ease: "power2.inOut",
   });
-  timeline.to(firstTarget, { ...animationProps, ease: "power2.inOut" }, "<");
-  timeline.to(secondTarget, { ...animationProps, ease: "power2.inOut" }, "<");
+
+  timeline.to(
+    firstTarget,
+    {
+      ...animationProps,
+      ease: "power2.inOut",
+    },
+    "<"
+  );
+
+  timeline.to(
+    secondTarget,
+    {
+      ...animationProps,
+      ease: "power2.inOut",
+    },
+    "<"
+  );
 };
